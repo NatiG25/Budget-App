@@ -1,3 +1,5 @@
 class Deal < ApplicationRecord
-  belongs_to :user
+  validates :name, presence: true
+  validates :amount, presence: true
+  belongs_to :user, foreign_key: "user_id"
 end
