@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable, :confirmable
   has_many :deals, foreign_key: "user_id"
+  has_many :groups, foreign_key: "user_id"
 
     validates :name, presence: true
   
