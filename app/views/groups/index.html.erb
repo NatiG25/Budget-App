@@ -1,2 +1,14 @@
-<h1>Groups#index</h1>
-<p>Find me in app/views/groups/index.html.erb</p>
+<section>
+    <h1>Categories</h1>
+
+    <% if @groups.present? %>
+        <div>
+            <% @groups.each do |item| %>
+            <p><%= item.name %></p>
+            <p><%= item.icon %></p>
+        <% end %>
+        </div>
+    <% else %>
+        <h2>There are no Categories.</h2>
+        <% end %>
+</section>
