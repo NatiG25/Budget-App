@@ -1,16 +1,16 @@
 class GroupsController < ApplicationController
   load_and_authorize_resource
-  before_action :set_group, only: %i[show delete]
-  before_action :authenticate_user!, only: %i[new create destroy]
+  before_action :set_group, only: %i[show]
+  before_action :authenticate_user!, only: %i[new create]
 
   def index
-    @groups = Group.all
+    @user = User.find(params[:user_id])
+    @groups = @user.groups.includes(:deals)
   end
   
   def show; end
 
   def new
-    @user = User.find(params[:user_id])
     @group = Group.new
   end
 
@@ -26,17 +26,10 @@ class GroupsController < ApplicationController
     end
   end
 
-  def destroy
-    @group.destroy
-
-    redirect_to user_groups_path(current_user.id)
-  end
-
-
   private
 
   def set_group
-    @group = Group.find(params[:id])
+    @group = Group.find(params[:group_id])
   end
 
   def group_params

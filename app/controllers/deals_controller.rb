@@ -5,7 +5,8 @@ class DealsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create destroy]
 
   def index
-    @deals = Deal.all
+    @group = Group.includes(:user).find(params[:group_id]) 
+    @deals = @group.deals
   end
   
   def show; end
@@ -20,7 +21,7 @@ class DealsController < ApplicationController
 
     if @deal.save
       flash[:notice] = 'Deal created successfully.'
-      redirect_to group_deals_path(@group.id)
+      redirect_to user_group_deals_path(@group.id)
     else
       flash[:alert] = 'Deal could not be be created!'
       render :new
