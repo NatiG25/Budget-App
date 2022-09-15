@@ -6,7 +6,7 @@
     <div class="border p-3 m-3">
             <p><strong>Name: </strong><%= link_to item.name, user_group_deals_path(current_user.id, item) %></p>
             <p><strong>Icon: </strong><%= item.icon %></p>
-            <p><strong>Total Transaction Amount: </strong><%= item.deals.count %></p>
+            <p><strong>Total Transaction Amount: </strong><%= item.deals.sum(:amount) %></p>
         </div>
     <% end %>
     <% else %>
