@@ -1,6 +1,7 @@
-<h1>New category</h1>
+<h1 class="m-3 text-center">New category</h1>
 
-<%= form_with model: @group, url: user_groups_path, method: :post do |form| %>
+<section class="text-center">
+  <%= form_with model: @group, url: user_groups_path, method: :post do |form| %>
 
   <div>
     <%= form.label :name, style: "display: block" %>
@@ -13,6 +14,9 @@
   </div>
 
   <div>
-    <%= form.submit "Save" %>
+    <%= form.submit "Save", class: "btn btn-success m-4" %>
+    <%= link_to "Back Home", user_groups_path(current_user.id), class: "btn btn-primary" %>
   </div>
 <% end %>
+
+</section>
