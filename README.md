@@ -21,6 +21,9 @@ This is a web application where you can manage your budget: you have a list of t
 - Ruby on Rails(as a gem)
 - Postgresql database
 
+## Live Demo
+[Live link]()
+
 ## Getting Started
 
 
