@@ -11,6 +11,7 @@ class Ability
     can :manage, :all
    elsif 
     can :manage, Group, user_id: user.id
+    can :manage, Deal, user_id: user.id
    end
 
       # return unless user.role == 'admin'

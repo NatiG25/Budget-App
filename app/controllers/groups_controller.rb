@@ -15,12 +15,13 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(group_params)
-    @group.user_id = current_user.id
+    @group = current_user.groups.new(group_params)
 
     if @group.save
+      flash[:notice] = 'Budget category successfully created!'
       redirect_to user_groups_path(current_user.id)
     else
+      flash[:alert] = 'Category could not be created!'
       render :new
     end
   end
@@ -39,6 +40,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:name, :icon)
+    params.permit(:name, :icon)
   end
 end
