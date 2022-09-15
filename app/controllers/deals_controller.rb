@@ -2,7 +2,7 @@ class DealsController < ApplicationController
   load_and_authorize_resource
   before_action :set_deal, only: %i[show]
   before_action :set_group, only: %i[new create]
-  before_action :authenticate_user!, only: %i[new create destroy]
+  before_action :authenticate_user!, only: %i[new create index]
 
   def index
     @group = Group.includes(:user).find(params[:group_id]) 

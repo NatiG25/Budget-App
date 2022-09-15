@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   load_and_authorize_resource
   before_action :set_group, only: %i[show]
-  before_action :authenticate_user!, only: %i[new create]
+  before_action :authenticate_user!, only: %i[new create index]
 
   def index
     @user = User.find(params[:user_id])
