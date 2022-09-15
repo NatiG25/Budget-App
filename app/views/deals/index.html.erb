@@ -1,4 +1,5 @@
 <h1 class="text-center">All Transactions for <i><%= @group.name %></i></h1>
+<% @deals.map {|deal| deal[:amount].first}.inject(:+) %>
 
 <% @deals.each do |deal| %>
 <div class="border m-3 p-3 text-center">
