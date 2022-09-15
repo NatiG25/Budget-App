@@ -10,8 +10,8 @@
     <%= f.collection_select :group_id, Group.where(user_id: current_user.id).order(:name),:id,:name %>
   </div>
   <div  class="d-flex justify-content-between">
-    <%= link_to "Go Back", user_group_deals_path(current_user.id), class:'btn btn-primary p-3' %>
-    <%= f.submit "Save", disable_with: 'Submiting...', class:'btn btn-success p-3' %>
+    <%= link_to "Go Back", user_group_deals_path(current_user.id), class:'btn btn-primary p-2' %>
+    <%= f.submit "Save", disable_with: 'Submiting...', class:'btn btn-success p-2' %>
   </div>
   <% end %>
 </article>

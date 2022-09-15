@@ -1,4 +1,7 @@
-<section class="ddd d-flex flex-column justify-content-center align-items-center" style="height: 90vh" style="width: 100%">
+<% unless user_signed_in? %>
+<p class="border m-3 p-3"><strong>Note: </strong>After signing up please, check your terminal for email confirmation, which will have a link to a new LogIn page.</p>
+<% end %>
+<section class="d-flex flex-column justify-content-center align-items-center" style="height: 80vh" style="width: 100%">
     <h1 class="fst-italic fw-bold">BudgetApp</h1>
 
 <div class="d-grid">

@@ -1,16 +1,16 @@
-<section>
-    <h1 class="text-center">Categories</h1>
+<section class="text-center">
+    <h1 class="bg-primary p-3 mb-5 text-white">Categories</h1>
 
     <% unless @groups.empty? %>
     <% @groups.each do |item| %>
-    <div class="border p-3 m-3">
-            <p><strong>Name: </strong><%= link_to item.name, user_group_deals_path(current_user.id, item) %></p>
+    <div class="border p-3 ms-5 me-5 mb-3 d-flex justify-content-between bg-white">
             <p><strong>Icon: </strong><%= item.icon %></p>
-            <p><strong>Total Transaction Amount: </strong><%= item.deals.sum(:amount) %></p>
+            <p><%= link_to item.name, user_group_deals_path(current_user.id, item), class: "fw-lighter text-decoration-none" %></p>
+            <p><strong>$</strong><%= item.deals.sum(:amount) %>.00</p>
         </div>
     <% end %>
     <% else %>
         <h2>There are no Categories.</h2>
         <% end %>
-    <%= link_to "Add New Category", new_user_group_path(current_user.id), class: "btn btn-primary m-3" %>
+    <%= link_to "Add New Category", new_user_group_path(current_user.id), class: "btn btn-success m-3" %>
 </section>

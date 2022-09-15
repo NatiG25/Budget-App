@@ -1,6 +1,6 @@
 <div class="text-center">
-  <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+<%- if controller_name != 'sessions' %>
+  <%= link_to "Already have an account?", new_session_path(resource_name), class: "fw-lighter" %><br />
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>

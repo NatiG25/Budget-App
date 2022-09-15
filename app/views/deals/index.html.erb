@@ -1,14 +1,17 @@
-<h1 class="text-center">All Transactions for <i><%= @group.name %></i></h1>
-<p class="m-3 fs-3">Total Transactions: <span class="fw-bold fst-italic"><%= @deals.sum(:amount) %></span></p>
+<section class="text-center">
+    <div class="d-flex bg-primary text-white align-items-center">
+        <%= link_to "Back Home", user_groups_path(current_user.id), class: "btn btn-primary" %>
+        <h1 class="mb-3 flex-grow-1">Transactions Details for <i><%= @group.name %></i></h1>
+    </div>
 
-<% @deals.each do |deal| %>
-<div class="border m-3 p-3 text-center ">
-    <p><strong>Name: </strong><%= deal.name %></p>
-    <p><strong>Amount: </strong><%= deal.amount %></p>
-</div>
-<% end %>
+    <p class="fs-3">Total Transaction: <span class="fw-bold fst-italic">$<%= @deals.sum(:amount) %></span></p>
 
-<div class="d-flex justify-content-between m-3">
-    <%= link_to "Back Home", user_groups_path(current_user.id), class: "btn btn-primary p-2" %>
+    <% @deals.each do |deal| %>
+    <div class="border m-3 p-3 d-flex justify-content-between bg-white">
+        <p class="fw-lighter fst-italic"><%= deal.name %></p>
+        <p><strong>$</strong><%= deal.amount %>.00</p>
+    </div>
+    <% end %>
+
     <%= link_to "Add New Transaction", new_user_group_deal_path(current_user.id, @group), class: "btn btn-success p-2" %>
-</div>
+</section>

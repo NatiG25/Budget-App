@@ -1,14 +1,11 @@
 class GroupsController < ApplicationController
   load_and_authorize_resource
-  before_action :set_group, only: %i[show]
   before_action :authenticate_user!, only: %i[new create index]
 
   def index
     @user = User.find(params[:user_id])
     @groups = @user.groups.includes(:deals)
   end
-  
-  def show; end
 
   def new
     @group = Group.new
@@ -27,10 +24,6 @@ class GroupsController < ApplicationController
   end
 
   private
-
-  def set_group
-    @group = Group.find(params[:group_id])
-  end
 
   def group_params
     params.require(:group).permit(:name, :icon)
