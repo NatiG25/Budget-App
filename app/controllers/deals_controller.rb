@@ -6,7 +6,7 @@ class DealsController < ApplicationController
 
   def index
     @group = Group.includes(:user).find(params[:group_id]) 
-    @deals = @group.deals
+    @deals = @group.deals.includes(:groups).order(created_at: :desc)
   end
   
   def show; end

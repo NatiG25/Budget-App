@@ -1,2 +1,10 @@
-<h1>Deals#index</h1>
-<p>Find me in app/views/deals/index.html.erb</p>
+<h1 class="text-center">All Transactions for <i><%= @group.name %></i></h1>
+
+<% @deals.each do |deal| %>
+<div class="border m-3 p-3 text-center">
+    <p><strong>Name: </strong><%= deal.name %></p>
+    <p><strong>Amount: </strong><%= deal.amount %></p>
+</div>
+<% end %>
+
+<%= link_to "Go Back", user_groups_path(current_user.id), class: "btn btn-primary" %>
