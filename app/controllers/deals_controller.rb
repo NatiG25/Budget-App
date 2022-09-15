@@ -5,10 +5,10 @@ class DealsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create index]
 
   def index
-    @group = Group.includes(:user).find(params[:group_id]) 
+    @group = Group.includes(:user).find(params[:group_id])
     @deals = @group.deals.includes(:groups).order(created_at: :desc)
   end
-  
+
   def show; end
 
   def new

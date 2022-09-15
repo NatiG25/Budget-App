@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'User', type: :feature do
   describe 'index page' do
-
     feature 'Testing user index page' do
       background { visit users_path }
 

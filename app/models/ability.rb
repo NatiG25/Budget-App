@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -7,17 +5,16 @@ class Ability
     user ||= User.new
     can :read, :all
 
-   if user.role == 'admin'
-    can :manage, :all
-   elsif 
-    can :manage, Group, user_id: user.id
-    can :manage, Deal, user_id: user.id
-   end
+    if user.role == 'admin'
+      can :manage, :all
+    elsif can :manage, Group, user_id: user.id
+      can :manage, Deal, user_id: user.id
+    end
 
-      # return unless user.role == 'admin'
-      # can :manage, :all
-      # return unless user.present?
-      # can :manage, :all
+    # return unless user.role == 'admin'
+    # can :manage, :all
+    # return unless user.present?
+    # can :manage, :all
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
