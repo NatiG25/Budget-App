@@ -1,5 +1,8 @@
 <section class="text-center">
-    <h1 class="bg-primary p-3 mb-5 text-white">Categories</h1>
+ <div class="d-flex text-white bg-primary mb-5 p-3">
+    <h1 class="bg-primary flex-grow-1">Categories</h1>
+    <%= button_to "LogOut", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+ </div>
 
     <% unless @groups.empty? %>
     <% @groups.each do |item| %>
