@@ -1,0 +1,18 @@
+<section class="text-center">
+<h1 class="m-3">New Deal</h1>
+
+<article class="m-4">
+  <%=  form_with model: @deal, url: user_group_deals_path do |f| %>
+  <%= f.text_field :name, placeholder:'Transaction Name', class: 'form-control p-3 my-3'%>
+  <%= f.number_field :amount,  placeholder: 'Amount', min:'0',  class: 'form-control p-3 my-3'%>
+  <div class="form-control p-3 my-3">
+    <%= f.label :group %>
+    <%= f.collection_select :group_id, Group.where(user_id: current_user.id).order(:name),:id,:name %>
+  </div>
+  <div  class="d-flex justify-content-between">
+    <%= link_to "Go Back", user_group_deals_path(current_user.id), class:'btn btn-primary p-2' %>
+    <%= f.submit "Save", disable_with: 'Submiting...', class:'btn btn-success p-2' %>
+  </div>
+  <% end %>
+</article>
+</section>
