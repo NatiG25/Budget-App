@@ -79,3 +79,5 @@ gem 'cancancan'
 gem 'hirb'
 
 gem 'rails-controller-testing'
+
+gem 'sass-rails'
