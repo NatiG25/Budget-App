@@ -1,6 +1,5 @@
 class DealsController < ApplicationController
   load_and_authorize_resource
-  before_action :set_deal, only: %i[show]
   before_action :set_group, only: %i[new create]
   before_action :authenticate_user!, only: %i[new create index]
 
@@ -8,8 +7,6 @@ class DealsController < ApplicationController
     @group = Group.includes(:user).find(params[:group_id])
     @deals = @group.deals.includes(:groups).order(created_at: :desc)
   end
-
-  def show; end
 
   def new
     @deal = Deal.new
@@ -29,10 +26,6 @@ class DealsController < ApplicationController
   end
 
   private
-
-  def set_deal
-    @deal = Deal.find(params[:id])
-  end
 
   def set_group
     @group = Group.includes(:user).find(params[:group_id])
