@@ -2,7 +2,7 @@
 
 # Budget-App
 
-> This is a web application where you can manage your budget: you have a list of transactions associated with a category so that you can see how much money you spent and on what.
+This is a web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
 ## Built With
 
@@ -49,11 +49,11 @@ In your browser, go to
 
 ## Author
 
-👤 **Natnail G/gorgis**
+👤 **Nati Gebregorgis**
 
 - GitHub: [@NatiG25](https://github.com/NatiG25)
-- Twitter: [@NatiG87702270](https://twitter.com/NatiG87702270)
-- LinkedIn: [@Natnail](https://www.linkedin.com/in/natnailgorgis/ )
+- Twitter: [@NatiG255](https://twitter.com/NatiG255)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/natnailgorgis/ )
 
 ## 🤝 Contributing
 
