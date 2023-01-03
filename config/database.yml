@@ -84,4 +84,4 @@ production:
   database: budget_app_production
   username: budget_app
   password: <%= ENV["BUDGET_APP_DATABASE_PASSWORD"] %>
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['postgres://budget_app:7UsrEwmZVQEo7uSZcxyGDGOMsDKmZW4b@dpg-ceq8ue6n6mpu14qqfjtg-a/budget_app_production_bql3'] %>
