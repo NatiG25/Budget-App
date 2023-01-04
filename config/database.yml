@@ -41,7 +41,7 @@ development:
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  port: 5432
+  # port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -81,7 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: budget_app_production_bql3
-  username: budget_app
-  password: <%= ENV["7UsrEwmZVQEo7uSZcxyGDGOMsDKmZW4b"] %>
   url: <%= ENV['postgres://budget_app:7UsrEwmZVQEo7uSZcxyGDGOMsDKmZW4b@dpg-ceq8ue6n6mpu14qqfjtg-a/budget_app_production_bql3'] %>
