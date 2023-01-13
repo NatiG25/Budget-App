@@ -58,11 +58,6 @@ development:
 test:
   <<: *default
   database: budget_app_test
-  adapter: postgresql
-  host: localhost
-  encoding: unicode
-  username: <%= ENV[“budget_app”] %>
-  password: <%= ENV[“7UsrEwmZVQEo7uSZcxyGDGOMsDKmZW4b”] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -86,4 +81,4 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['postgres://budget_app:7UsrEwmZVQEo7uSZcxyGDGOMsDKmZW4b@dpg-ceq8ue6n6mpu14qqfjtg-a/budget_app_production_bql3'] %>
+  url: <%= ENV['postgres://budget_app_db_fqm5_user:FpDDLM3qwiC2Yw2Qz7mOzQA8Nu9AhaIM@dpg-cf0os81a6gdm8jpn280g-a/budget_app_db_fqm5'] %>
