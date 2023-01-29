@@ -20,7 +20,6 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  socket: /tmp/.s.PGSQL.5432
 
 development:
   <<: *default
@@ -81,4 +80,5 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  url: <%= ENV["postgres://budget_app_db_fqm5_user:FpDDLM3qwiC2Yw2Qz7mOzQA8Nu9AhaIM@dpg-cf0os81a6gdm8jpn280g-a/budget_app_db_fqm5"] %>
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
