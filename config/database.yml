@@ -81,5 +81,4 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  url: <%= ENV['postgres://budget_app_db_fqm5_user:FpDDLM3qwiC2Yw2Qz7mOzQA8Nu9AhaIM@dpg-cf0os81a6gdm8jpn280g-a.oregon-postgres.render.com/budget_app_db_fqm5'] %>
+  url: <%= ENV["postgres://budget_app_db_fqm5_user:FpDDLM3qwiC2Yw2Qz7mOzQA8Nu9AhaIM@dpg-cf0os81a6gdm8jpn280g-a/budget_app_db_fqm5"] %>
