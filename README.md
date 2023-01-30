@@ -4,6 +4,9 @@
 
 This is a web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
+![budget](https://user-images.githubusercontent.com/86069740/215374058-b275ce6c-0690-484b-8b3f-f280da2ea77a.png)
+
+
 ## Built With
 
 - Ruby on Rails
