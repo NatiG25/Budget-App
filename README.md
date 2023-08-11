@@ -25,7 +25,7 @@ This is a web application where you can manage your budget: you have a list of t
 - Postgresql database
 
 ## Live Demo
-[Live link](https://budget-app-qgqp.onrender.com/)
+[Live link](https://budget-app-13wq.onrender.com/)
 
 ## Getting Started
 
